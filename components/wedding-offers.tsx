@@ -30,6 +30,7 @@ export function WeddingOffers() {
         "Meadow Photography",
         '"Shemegelena" photography and videography',
         "Wedding photography and videography",
+        "Meles",
         "200 Images"
       ],
       popular: true,
@@ -48,6 +49,7 @@ export function WeddingOffers() {
         "Meadow Photography and short promotional video",
         '"Shemegelena" photography and videography',
         "Wedding photography and videography",
+        "Meles",
         "200 Images"
       ],
       popular: false,
