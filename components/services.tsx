@@ -30,35 +30,53 @@ export function Services() {
   ]
 
   return (
-    <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-5xl">
+    <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      </div>
+
+      <div className="container mx-auto max-w-5xl relative">
         <div className="space-y-12">
           <div className="space-y-4">
-            <h2 className="text-sm uppercase tracking-wider text-muted-foreground">Services</h2>
-            <h3 className="text-3xl sm:text-4xl font-medium">What I Do</h3>
+            <div className="inline-block">
+              <h2 className="text-sm uppercase tracking-wider text-muted-foreground bg-secondary/50 px-4 py-2 rounded-full border border-border/50">
+                Services
+              </h2>
+            </div>
+            <h3 className="text-3xl sm:text-4xl font-medium">
+              <span className="gradient-text">What I Do</span>
+            </h3>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6">
             {services.map((service, index) => {
               const Icon = service.icon
               return (
-                <Card key={index} className="p-6 sm:p-8 space-y-4 hover:shadow-lg transition-shadow">
-                  <Icon className="h-8 w-8 text-primary" />
-                  <div className="space-y-2">
-                    <h4 className="text-xl font-semibold">{service.title}</h4>
-                    <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-                  </div>
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {service.skills.map((skill, skillIndex) => (
-                      <span
-                        key={skillIndex}
-                        className="text-xs px-3 py-1 bg-secondary text-secondary-foreground rounded-full"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </Card>
+                <div key={index}>
+                  <Card className="p-6 sm:p-8 space-y-4 hover:shadow-2xl transition-all duration-500 hover-lift border-2 hover:border-primary/20 group">
+                    <div className="flex items-center gap-4">
+                      <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
+                        <Icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <h4 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">{service.title}</h4>
+                      <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                    </div>
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {service.skills.map((skill, skillIndex) => (
+                        <span
+                          key={skillIndex}
+                          className="text-xs px-3 py-1 bg-secondary text-secondary-foreground rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </Card>
+                </div>
               )
             })}
           </div>

@@ -2,7 +2,6 @@
 
 import { Card } from "@/components/ui/card"
 import { Briefcase, GraduationCap } from "lucide-react"
-import { motion } from "framer-motion"
 
 export function Experience() {
   const experiences = [
@@ -56,7 +55,7 @@ export function Experience() {
       <div className="container mx-auto max-w-5xl">
         <div className="space-y-12">
           {/* Section Header */}
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -72,7 +71,7 @@ export function Experience() {
             <p className="text-muted-foreground max-w-2xl mx-auto">
               A blend of creativity, strategy, and technical expertise shaped through work and academic achievements.
             </p>
-          </motion.div>
+          </div>
 
           {/* Work Experience Timeline */}
           <div className="relative space-y-8">
@@ -80,7 +79,7 @@ export function Experience() {
             <div className="absolute left-5 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/60 via-primary/30 to-transparent" />
 
             {experiences.map((exp, index) => (
-              <motion.div
+              <div
                 key={index}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -104,12 +103,12 @@ export function Experience() {
                     <p className="text-muted-foreground leading-relaxed pt-2">{exp.description}</p>
                   </div>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Education */}
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -129,7 +128,7 @@ export function Experience() {
                 </p>
               </div>
             </Card>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

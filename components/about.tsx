@@ -33,73 +33,72 @@ export function About() {
             </p>
           </div>
 
-          {/* Existing code remains unchanged */}
+          {/* Enhanced stats with animations */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {stats.map((stat, index) => {
               const Icon = stat.icon
               return (
-                <Card
-                  key={index}
-                  className="p-6 sm:p-8 space-y-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 group"
-                >
-                  <div className="flex items-center justify-between">
-                    <Icon className={`h-8 w-8 ${stat.color} transition-transform group-hover:scale-110`} />
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-2xl sm:text-3xl font-bold">{stat.label}</p>
-                    <p className="text-sm sm:text-base text-muted-foreground">{stat.description}</p>
-                  </div>
-                </Card>
+                <div key={index}>
+                  <Card className="p-6 sm:p-8 space-y-4 hover:shadow-xl transition-all duration-300 hover-lift border-2 group">
+                    <div className="flex items-center justify-between">
+                      <Icon className={`h-8 w-8 ${stat.color} transition-transform group-hover:scale-110`} />
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-2xl sm:text-3xl font-bold">{stat.label}</p>
+                      <p className="text-sm sm:text-base text-muted-foreground">{stat.description}</p>
+                    </div>
+                  </Card>
+                </div>
               )
             })}
           </div>
 
           <div className="bg-card border-2 border-border rounded-3xl p-8 sm:p-12 space-y-10">
-          <h3 className="text-2xl sm:text-3xl font-semibold text-center">
-            Core Expertise
-          </h3>
+            <h3 className="text-2xl sm:text-3xl font-semibold text-center">
+              <span className="gradient-text">Core Expertise</span>
+            </h3>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: "Video Editing", desc: "Premiere Pro, DaVinci", icon: "🎬" },
-              { title: "Digital Marketing", desc: "Social & Content Strategy", icon: "📈" },
-              { title: "Graphic Design", desc: "Photoshop, Illustrator", icon: "🎨" },
-              { title: "Videography", desc: "Production & Post", icon: "📷" },
-            ].map((skill, index) => (
-              <div
-                key={index}
-                className="p-6 bg-background border rounded-2xl text-center space-y-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="text-3xl">{skill.icon}</div>
-                <h4 className="font-semibold text-lg">{skill.title}</h4>
-                <p className="text-sm text-muted-foreground">{skill.desc}</p>
-              </div>
-            ))}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { title: "Video Editing", desc: "Premiere Pro, DaVinci", icon: "🎬" },
+                { title: "Digital Marketing", desc: "Social & Content Strategy", icon: "📈" },
+                { title: "Graphic Design", desc: "Photoshop, Illustrator", icon: "🎨" },
+                { title: "Videography", desc: "Production & Post", icon: "📷" },
+              ].map((skill, index) => (
+                <div
+                  key={index}
+                  className="p-6 bg-background border rounded-2xl text-center space-y-4 hover:shadow-xl hover-lift transition-all duration-300 group"
+                >
+                  <div className="text-3xl group-hover:scale-110 transition-transform duration-300">{skill.icon}</div>
+                  <h4 className="font-semibold text-lg group-hover:text-primary transition-colors duration-300">{skill.title}</h4>
+                  <p className="text-sm text-muted-foreground">{skill.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="bg-card border-2 border-border rounded-3xl p-8 sm:p-12 space-y-10">
-          <h3 className="text-2xl sm:text-3xl font-semibold text-center">
-            Gears I Use
-          </h3>
+          <div className="bg-card border-2 border-border rounded-3xl p-8 sm:p-12 space-y-10">
+            <h3 className="text-2xl sm:text-3xl font-semibold text-center">
+              <span className="gradient-text">Gears I Use</span>
+            </h3>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: "Camera", desc: "Canon Mark IV & Canon R3", icon: "📷" },
-              { title: "Lighting", desc: "Amran & Spotlight", icon: "💡" },
-              { title: "Editing Tools", desc: "Premiere Pro, DaVinci", icon: "🎬" },
-            ].map((gear, index) => (
-              <div
-                key={index}
-                className="p-6 bg-background border rounded-2xl text-center space-y-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="text-3xl">{gear.icon}</div>
-                <h4 className="font-semibold text-lg">{gear.title}</h4>
-                <p className="text-sm text-muted-foreground">{gear.desc}</p>
-              </div>
-            ))}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { title: "Camera", desc: "Canon Mark IV & Canon R3", icon: "📷" },
+                { title: "Lighting", desc: "Amran & Spotlight", icon: "💡" },
+                { title: "Editing Tools", desc: "Premiere Pro, DaVinci", icon: "🎬" },
+              ].map((gear, index) => (
+                <div
+                  key={index}
+                  className="p-6 bg-background border rounded-2xl text-center space-y-4 hover:shadow-xl hover-lift transition-all duration-300 group"
+                >
+                  <div className="text-3xl group-hover:scale-110 transition-transform duration-300">{gear.icon}</div>
+                  <h4 className="font-semibold text-lg group-hover:text-primary transition-colors duration-300">{gear.title}</h4>
+                  <p className="text-sm text-muted-foreground">{gear.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </section>
